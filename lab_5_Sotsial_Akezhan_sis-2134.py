@@ -217,25 +217,22 @@
 #    stats = {}
 
 #    for user, transaction in transactions:
-#       if user not in stats:
-#          stats[user] = {
-#             1: 0,
-#             2: 0,
-#             3: 0,
-#             'mft': 0,
-#             'lft': 0
-#          }
-#       stats[user][transaction] += 1
-#       last_transaction = transaction
+#          if user not in stats:
+#             stats[user] = {
+#                1: 0,
+#                2: 0,
+#                3: 0,
+#                'mft': 0,
+#                'lft': 0
+#             }
+#          stats[user][transaction] += 1
 
-#    for transaction_key, transaction_value in stats[user].items():
-#       if transaction_value == max(stats[user].values()):
-#          stats[user]['mft'] = transaction_key
-#       if transaction_value == min(stats[user].values()):
-#          stats[user]['lft'] = transaction_key
+#    for user, user_stats in stats.items():
+#          max_transaction = max(user_stats, key=user_stats.get)
+#          min_transaction = min(user_stats, key=user_stats.get)
+#          user_stats['mft'] = max_transaction
+#          user_stats['lft'] = min_transaction
 
-#    stats[user]['mft'] = last_transaction
-#    stats[user]['lft'] = transaction
 #    print("stats =", stats)
 # except ValueError:
 #    print('error')

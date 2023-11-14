@@ -34,7 +34,7 @@
 #    list_sym = []
 
 #    for item, count in letters_count.items():
-#       if item in 'aeiou':
+#       if item in 'aeiou':``
 #          list_vows.append((item, count))
 #       elif item.isalpha():
 #          list_cons.append((item, count))
